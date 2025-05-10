@@ -1,6 +1,6 @@
 local regions = require("data/regions")
-local data = require("data")
 local countries = require("data/countries")
+local player = require("player")
 
 local start = {}
 
@@ -27,7 +27,6 @@ function start.all()
 
                 regions[b + 1].points[g + 1] = {["x"]=math.floor(x/2), ["y"]=math.floor(y/2)}
                 regions[b + 1].center = regions[b + 1].points[1]
-                regions[b + 1].color = {r=200, g=200, b=200}
             end
         end
     end
@@ -51,7 +50,7 @@ function start.all()
 
     for k, country in pairs(countries) do
         for n, region in ipairs(country.regions) do
-            regions[n].country = k
+            regions[region].country = k
         end
     end
 end

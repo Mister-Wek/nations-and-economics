@@ -1,3 +1,0 @@
-local data = {}
-
-return data
